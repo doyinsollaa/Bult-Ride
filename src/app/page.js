@@ -12,6 +12,8 @@ import Contact from '@/components/Contact/Contact';
 import BestRide from '@/components/BestRide/BestRide';
 import About from '@/components/About/About';
 import AppStore from '@/components/AppStore/AppStore';
+import Testimonial from '@/components/Testimonial/Testimonial';
+import Footer from '@/components/Footer/Footer';
 
 const page = () => {
   useEffect(() => {
@@ -31,6 +33,7 @@ const page = () => {
       <BestRide />
       <About />
       <AppStore />
+      <Testimonial />
   </div>
   )
   

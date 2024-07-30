@@ -20,12 +20,22 @@ const About = () => {
             <div className="container">
                 {/* header title section */}
                 <div className='space-y-3 uppercase text-center py-14'>
-                    <p className='text-pink-400 text-3xl font-semibold'>We Provide Quality Service </p>
-                    <h1>To Satisfy You</h1>
+                    <p  data-aos="fade-up"
+                        className='text-pink-400 text-3xl font-semibold'>We Provide Quality Service 
+                    </p>
+                    <h1 
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                        className='text-3xl font-bold'>
+                            To Satisfy You
+                    </h1>
                 </div>
 
                 {/* card sections */}
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-8'>
+                <div 
+                   data-aos="fade-up"
+                   data-aos-delay="300"
+                   className='grid grid-cols-1 sm:grid-cols-2 gap-8'>
                     <div className="space-y-8">
                         <BannerCard 
                            title={"Fast Booking"}

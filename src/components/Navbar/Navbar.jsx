@@ -4,6 +4,7 @@ import React from 'react'
 import DarkMode from './DarkMode';
 import {HiMenuAlt3, HiMenuAlt1} from "react-icons/hi"
 import ResponsiveMenu from './ResponsiveMenu';
+import { usePathname } from 'next/navigation';
 
 const Navlinks = [
     { id: 1, name: 'Home', link: '/' },
@@ -14,6 +15,9 @@ const Navlinks = [
 ];
 
 const Navbar = () => {
+
+    //  linking the pages to the navbar. this after all the project is done, its the last step
+    const pathname = usePathname();
 
     // toggle menu implementation
     const [showMenu, setShowMenu] = React.useState(false);
@@ -35,10 +39,15 @@ const Navbar = () => {
                 <div className='hidden md:block'>
                     <ul className='flex items-center gap-8'>
                         {Navlinks.map(({id, name, link }) => {
+                            // continuation of linking the pages to the nav. the one that was started up there
+                            const isActive = pathname ===  link;
                             return(
                                 <li key={id} className='py-5'>
                                     <Link 
-                                    href={link} className={'text-lg font-medium text-black dark:text-white py-2 px-2 rounded-full hover:bg-pink-400 duration-300'}>
+                                    href={link} 
+                                    className={`${ 
+                                        isActive ? "bg-pink-400 dark:text-black" : ""
+                                    } text-lg font-medium text-black dark:text-white py-2 px-2 rounded-full hover:bg-pink-400 duration-300`}>
                                     {name}
                                     </Link>
                                     
